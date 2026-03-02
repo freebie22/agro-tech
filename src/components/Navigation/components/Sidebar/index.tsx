@@ -22,11 +22,7 @@ const Sidebar = ({
 
       <div ref={sidebarRef} className="sidebar" id="sidebar">
         <div className="sidebar-header d-flex align-items-center justify-content-between p-3">
-          <h3 className="mb-0 fs-6 text-white">
-            Agriculture
-            <br />
-            Management
-          </h3>
+          <h3 className="mb-0 fs-6 text-white pb-1">Agro Tech</h3>
           <button
             className="btn btn-light btn-sm toggle-btn"
             id="toggleSidebar"
@@ -43,8 +39,8 @@ const Sidebar = ({
             alt="User Avatar"
           />
           <div className="user-info">
-            <h6 className="mb-1 text-white">Najam ul Huda</h6>
-            <small className="text-light">Farm Manager</small>
+            <h6 className="mb-1 text-white">Іван Семенюк</h6>
+            <small className="text-light">Завідуючий фермою</small>
           </div>
         </div>
 
@@ -56,7 +52,7 @@ const Sidebar = ({
               data-page="dashboard"
             >
               <i className="fas fa-tachometer-alt me-2"></i>
-              <span className="link-text">Dashboard</span>
+              <span className="link-text">Головна</span>
             </a>
           </li>
           <li className="nav-item">
@@ -66,7 +62,7 @@ const Sidebar = ({
               data-page="crops"
             >
               <i className="fas fa-seedling me-2"></i>
-              <span className="link-text">Crops</span>
+              <span className="link-text">Посіви</span>
             </a>
           </li>
           <li className="nav-item">
@@ -76,7 +72,7 @@ const Sidebar = ({
               data-page="farmers"
             >
               <i className="fas fa-users me-2"></i>
-              <span className="link-text">Farmers</span>
+              <span className="link-text">Фермери</span>
             </a>
           </li>
           <li className="nav-item">
@@ -86,7 +82,7 @@ const Sidebar = ({
               data-page="reports"
             >
               <i className="fas fa-chart-bar me-2"></i>
-              <span className="link-text">Reports</span>
+              <span className="link-text">Звіти</span>
             </a>
           </li>
           <li className="nav-item">
@@ -96,7 +92,7 @@ const Sidebar = ({
               data-page="settings"
             >
               <i className="fas fa-cog me-2"></i>
-              <span className="link-text">Settings</span>
+              <span className="link-text">Налаштування</span>
             </a>
           </li>
         </ul>

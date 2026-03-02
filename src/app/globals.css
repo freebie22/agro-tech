@@ -157,7 +157,7 @@ body {
 
   .navbar-container.expanded {
     margin-left: 250px;
-    transition: margin-left 0.25s ease;
+    transition: margin-left 0.3s ease;
   }
 }
 

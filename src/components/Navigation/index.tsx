@@ -20,6 +20,7 @@ const Navigation = () => {
     toggleSidebarBtnRef.current?.addEventListener("click", () => {
       sidebarRef.current?.classList.toggle("collapsed");
       navbarRef?.current?.classList.toggle("expanded");
+      document.getElementById("mainContent")?.classList.toggle("expanded");
     });
 
     mobileMenuBtnRef.current?.addEventListener("click", () => {

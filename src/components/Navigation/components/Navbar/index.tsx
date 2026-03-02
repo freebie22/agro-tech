@@ -24,7 +24,7 @@ const Navbar = ({ mobileMenuBtnRef, navbarRef }: Props) => {
             <i className="fas fa-bars"></i>
           </button>
           <h4 className="mb-0 text-success" id="pageTitle">
-            Dashboard
+            Головна
           </h4>
         </div>
         <div className="d-flex align-items-center">
@@ -66,7 +66,7 @@ const Navbar = ({ mobileMenuBtnRef, navbarRef }: Props) => {
           </div>
           <button className="btn btn-outline-success btn-sm" id="logoutBtn">
             <i className="fas fa-sign-out-alt me-1"></i>
-            <span className="logout-btn-text">Logout</span>
+            <span className="logout-btn-text">Вихід</span>
           </button>
         </div>
       </div>

@@ -1,6 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import Link from "next/link";
+import clsx from "clsx";
+import { usePathname } from "next/navigation";
+
 type Props = {
   sidebarRef: React.RefObject<HTMLDivElement | null>;
   sidebarBackdropRef: React.RefObject<HTMLDivElement | null>;
@@ -12,6 +16,8 @@ const Sidebar = ({
   sidebarBackdropRef,
   toggleSidebarBtnRef,
 }: Props) => {
+  const pathname = usePathname();
+
   return (
     <>
       <div
@@ -46,54 +52,64 @@ const Sidebar = ({
 
         <ul className="nav flex-column p-3 flex-grow-1">
           <li className="nav-item">
-            <a
-              className="nav-link d-flex align-items-center active"
-              href="#"
+            <Link
+              className={clsx(
+                `nav-link d-flex align-items-center ${pathname === "/" && "active"}`,
+              )}
+              href="/"
               data-page="dashboard"
             >
               <i className="fas fa-tachometer-alt me-2"></i>
               <span className="link-text">Головна</span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link d-flex align-items-center"
-              href="#"
+            <Link
+              className={clsx(
+                `nav-link d-flex align-items-center ${pathname === "/crops" && "active"}`,
+              )}
+              href="/crops"
               data-page="crops"
             >
               <i className="fas fa-seedling me-2"></i>
               <span className="link-text">Посіви</span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link d-flex align-items-center"
-              href="#"
+            <Link
+              className={clsx(
+                `nav-link d-flex align-items-center ${pathname === "/farmers" && "active"}`,
+              )}
+              href="/farmers"
               data-page="farmers"
             >
               <i className="fas fa-users me-2"></i>
               <span className="link-text">Фермери</span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link d-flex align-items-center"
-              href="#"
+            <Link
+              className={clsx(
+                `nav-link d-flex align-items-center ${pathname === "/reports" && "active"}`,
+              )}
+              href="/reports"
               data-page="reports"
             >
               <i className="fas fa-chart-bar me-2"></i>
               <span className="link-text">Звіти</span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link d-flex align-items-center"
-              href="#"
+            <Link
+              className={clsx(
+                `nav-link d-flex align-items-center ${pathname === "/settings" && "active"}`,
+              )}
+              href="/settings"
               data-page="settings"
             >
               <i className="fas fa-cog me-2"></i>
               <span className="link-text">Налаштування</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

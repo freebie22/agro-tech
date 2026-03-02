@@ -1,11 +1,49 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+
 type Props = {
   mobileMenuBtnRef: React.RefObject<HTMLButtonElement | null>;
   navbarRef: React.RefObject<HTMLDivElement | null>;
 };
 
 const Navbar = ({ mobileMenuBtnRef, navbarRef }: Props) => {
+  const [pageName, setPageName] = useState<string>("");
+  const pathname = usePathname();
+
+  const handlePageName = (href: string): string => {
+    let name = " ";
+
+    switch (href) {
+      case "/crops": {
+        name = "Посіви";
+        break;
+      }
+      case "/farmers": {
+        name = "Працівники";
+        break;
+      }
+      case "/reports": {
+        name = "Звіти";
+        break;
+      }
+      case "/settings": {
+        name = "Налаштування";
+        break;
+      }
+      default:
+        name = "Головна";
+        break;
+    }
+    return name;
+  };
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setPageName(handlePageName(pathname));
+  }, [pathname]);
+
   return (
     <nav
       className="navbar navbar-light bg-white shadow-sm"
@@ -24,7 +62,7 @@ const Navbar = ({ mobileMenuBtnRef, navbarRef }: Props) => {
             <i className="fas fa-bars"></i>
           </button>
           <h4 className="mb-0 text-success" id="pageTitle">
-            Головна
+            {pageName}
           </h4>
         </div>
         <div className="d-flex align-items-center">

@@ -37,7 +37,7 @@ const Charts = () => {
   const pieRef = useRef<HTMLCanvasElement | null>(null);
   const lineRef = useRef<HTMLCanvasElement | null>(null);
 
-  const initCharts = () => {
+  useEffect(() => {
     const labels = ["Пшениця", "Рис", "Кукурудза", "Соя", "Овочі", "Фрукти"];
     const bg = [
       "rgba(54,162,235,0.7)",
@@ -51,11 +51,15 @@ const Charts = () => {
       return c.replace("0.7", "1");
     });
 
+    let barChart: Chart | null = null;
+    let pieChart: Chart | null = null;
+    let lineChart: Chart | null = null;
+
     if (barRef.current) {
       const ctx = barRef.current.getContext("2d");
 
       if (ctx) {
-        new Chart(ctx, {
+        barChart = new Chart(ctx, {
           type: "bar",
           data: {
             labels: labels,
@@ -87,7 +91,7 @@ const Charts = () => {
       const ctx = pieRef.current.getContext("2d");
 
       if (ctx) {
-        new Chart(ctx, {
+        pieChart = new Chart(ctx, {
           type: "pie",
           data: {
             labels: labels,
@@ -113,7 +117,7 @@ const Charts = () => {
       const ctx = lineRef.current.getContext("2d");
 
       if (ctx) {
-        new Chart(ctx, {
+        lineChart = new Chart(ctx, {
           type: "line",
           data: {
             labels: [
@@ -155,10 +159,18 @@ const Charts = () => {
         });
       }
     }
-  };
 
-  useEffect(() => {
-    initCharts();
+    return () => {
+      if (barChart) {
+        barChart.destroy();
+      }
+      if (pieChart) {
+        pieChart.destroy();
+      }
+      if (lineChart) {
+        lineChart.destroy();
+      }
+    };
   }, []);
 
   return (

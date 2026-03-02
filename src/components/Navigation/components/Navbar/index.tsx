@@ -2,15 +2,19 @@
 
 type Props = {
   mobileMenuBtnRef: React.RefObject<HTMLButtonElement | null>;
+  navbarRef: React.RefObject<HTMLDivElement | null>;
 };
 
-const Navbar = ({ mobileMenuBtnRef }: Props) => {
+const Navbar = ({ mobileMenuBtnRef, navbarRef }: Props) => {
   return (
     <nav
       className="navbar navbar-light bg-white shadow-sm"
       style={{ padding: "0.5rem 1rem" }}
     >
-      <div className="container-fluid d-flex align-items-center justify-content-between">
+      <div
+        ref={navbarRef}
+        className="container-fluid d-flex align-items-center justify-content-between navbar-container expanded"
+      >
         <div className="d-flex align-items-center">
           <button
             ref={mobileMenuBtnRef}

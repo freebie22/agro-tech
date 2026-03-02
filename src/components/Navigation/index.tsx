@@ -9,6 +9,7 @@ const Navigation = () => {
   const sidebarBackdropRef = useRef<HTMLDivElement | null>(null);
   const toggleSidebarBtnRef = useRef<HTMLButtonElement | null>(null);
   const mobileMenuBtnRef = useRef<HTMLButtonElement | null>(null);
+  const navbarRef = useRef<HTMLDivElement | null>(null);
 
   const closeMobileSidebar = () => {
     sidebarRef.current?.classList.remove("open");
@@ -18,6 +19,7 @@ const Navigation = () => {
   useEffect(() => {
     toggleSidebarBtnRef.current?.addEventListener("click", () => {
       sidebarRef.current?.classList.toggle("collapsed");
+      navbarRef?.current?.classList.toggle("expanded");
     });
 
     mobileMenuBtnRef.current?.addEventListener("click", () => {
@@ -35,7 +37,7 @@ const Navigation = () => {
         toggleSidebarBtnRef={toggleSidebarBtnRef}
         sidebarBackdropRef={sidebarBackdropRef}
       />
-      <Navbar mobileMenuBtnRef={mobileMenuBtnRef} />
+      <Navbar mobileMenuBtnRef={mobileMenuBtnRef} navbarRef={navbarRef} />
     </>
   );
 };

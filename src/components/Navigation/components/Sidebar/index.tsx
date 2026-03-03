@@ -90,6 +90,18 @@ const Sidebar = ({
           <li className="nav-item">
             <Link
               className={clsx(
+                `nav-link d-flex align-items-center ${pathname === "/sensors" && "active"}`,
+              )}
+              href="/sensors"
+              data-page="sensors"
+            >
+              <i className="fas fa-cog me-2"></i>
+              <span className="link-text">Показники датчиків</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              className={clsx(
                 `nav-link d-flex align-items-center ${pathname === "/reports" && "active"}`,
               )}
               href="/reports"

@@ -1,65 +1,183 @@
-import Image from "next/image";
-
-export default function Home() {
+export default function Settings() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="container-fluid p-4" id="pageContent">
+      <div id="settingsPage" className="page-content">
+        <h4>Налаштування системи</h4>
+        <p className="text-muted">Налаштування та параметри додатку</p>
+
+        <div className="card shadow-sm mb-4">
+          <div className="card-body">
+            <div className="row">
+              <div className="col-md-6 mb-4 mb-md-0">
+                <h5>Загальні налаштування</h5>
+
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="measurementUnits">
+                    Одиниці виміру
+                  </label>
+                  <select
+                    id="measurementUnits"
+                    className="form-select"
+                    defaultValue="metric"
+                  >
+                    <option value="metric">Метричні (кг, гектари)</option>
+                    <option value="imperial">Імперські (lbs, acres)</option>
+                  </select>
+                </div>
+
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="dateFormat">
+                    Формат дати
+                  </label>
+                  <select
+                    id="dateFormat"
+                    className="form-select"
+                    defaultValue="DD/MM/YYYY"
+                  >
+                    <option value="DD/MM/YYYY">ДД/ММ/РРРР</option>
+                    <option value="MM/DD/YYYY">ММ/ДД/РРРР</option>
+                    <option value="YYYY-MM-DD">РРРР-ММ-ДД</option>
+                  </select>
+                </div>
+
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="language">
+                    Мова інтерфейсу
+                  </label>
+                  <select
+                    id="language"
+                    className="form-select"
+                    defaultValue="uk"
+                  >
+                    <option value="uk">Українська</option>
+                    <option value="en">English</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="col-md-6">
+                <h5>Налаштування сповіщень</h5>
+
+                <div className="form-check mb-2">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="harvestAlerts"
+                    defaultChecked
+                  />
+                  <label className="form-check-label" htmlFor="harvestAlerts">
+                    Сповіщення про дати збору врожаю
+                  </label>
+                </div>
+
+                <div className="form-check mb-2">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="weatherAlerts"
+                    defaultChecked
+                  />
+                  <label className="form-check-label" htmlFor="weatherAlerts">
+                    Сповіщення про погоду
+                  </label>
+                </div>
+
+                <div className="form-check mb-2">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="systemAlerts"
+                  />
+                  <label className="form-check-label" htmlFor="systemAlerts">
+                    Сповіщення про технічне обслуговування системи
+                  </label>
+                </div>
+
+                <div className="form-check mb-2">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="marketingAlerts"
+                  />
+                  <label className="form-check-label" htmlFor="marketingAlerts">
+                    Маркетингові сповіщення
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="card shadow-sm mb-4">
+          <div className="card-body">
+            <h5>Безпека та резервне копіювання</h5>
+
+            <div className="mb-3">
+              <label className="form-label" htmlFor="passwordUpdate">
+                Зміна пароля
+              </label>
+              <input
+                type="password"
+                id="passwordUpdate"
+                className="form-control"
+                placeholder="Новий пароль"
+              />
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label" htmlFor="backupFrequency">
+                Частота резервного копіювання
+              </label>
+              <select
+                id="backupFrequency"
+                className="form-select"
+                defaultValue="weekly"
+              >
+                <option value="daily">Щодня</option>
+                <option value="weekly">Щотижня</option>
+                <option value="monthly">Щомісяця</option>
+              </select>
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label" htmlFor="twoFactorAuth">
+                Двофакторна автентифікація
+              </label>
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  id="twoFactorAuth"
+                  defaultChecked
+                />
+                <label className="form-check-label" htmlFor="twoFactorAuth">
+                  Увімкнено
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
+
+        <div className="card shadow-sm">
+          <div className="card-body">
+            <h5>Підписки та статистика</h5>
+            <ul className="list-group">
+              <li className="list-group-item d-flex justify-content-between align-items-center">
+                Активні підписки
+                <span className="badge bg-success rounded-pill">3</span>
+              </li>
+              <li className="list-group-item d-flex justify-content-between align-items-center">
+                Використано сповіщень за місяць
+                <span className="badge bg-primary rounded-pill">72</span>
+              </li>
+              <li className="list-group-item d-flex justify-content-between align-items-center">
+                Максимально дозволено сповіщень
+                <span className="badge bg-warning rounded-pill">100</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

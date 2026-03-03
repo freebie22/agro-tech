@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Props = {
   mobileMenuBtnRef: React.RefObject<HTMLButtonElement | null>;
@@ -10,6 +10,7 @@ type Props = {
 
 const Navbar = ({ mobileMenuBtnRef, navbarRef }: Props) => {
   const [pageName, setPageName] = useState<string>("");
+  const logoutRef = useRef<HTMLButtonElement | null>(null);
   const pathname = usePathname();
 
   const handlePageName = (href: string): string => {
@@ -43,6 +44,13 @@ const Navbar = ({ mobileMenuBtnRef, navbarRef }: Props) => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setPageName(handlePageName(pathname));
   }, [pathname]);
+
+  useEffect(() => {
+    logoutRef.current?.addEventListener("click", function () {
+      if (confirm("Ви хочете вийти з облікового запису?"))
+        alert("Вихід успішний!");
+    });
+  }, []);
 
   return (
     <nav
@@ -102,7 +110,11 @@ const Navbar = ({ mobileMenuBtnRef, navbarRef }: Props) => {
               </li>
             </ul>
           </div>
-          <button className="btn btn-outline-success btn-sm" id="logoutBtn">
+          <button
+            ref={logoutRef}
+            className="btn btn-outline-success btn-sm"
+            id="logoutBtn"
+          >
             <i className="fas fa-sign-out-alt me-1"></i>
             <span className="logout-btn-text">Вихід</span>
           </button>

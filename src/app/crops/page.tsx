@@ -289,7 +289,7 @@ const Crops = () => {
       cropModal.hide();
     }
 
-    alert("Посів  " + (currentCropId ? "оновлено" : "додано") + " успішно!");
+    alert("Посів " + (currentCropId ? "оновлено" : "додано") + " успішно!");
   };
 
   const filterCrops = () => {

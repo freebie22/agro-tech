@@ -95,7 +95,7 @@ const Sidebar = ({
               href="/sensors"
               data-page="sensors"
             >
-              <i className="fas fa-cog me-2"></i>
+              <i className="fa-solid fa-network-wired me-2"></i>
               <span className="link-text">Показники датчиків</span>
             </Link>
           </li>
@@ -107,8 +107,20 @@ const Sidebar = ({
               href="/sensors"
               data-page="sensors"
             >
-              <i className="fas fa-cog me-2"></i>
+              <i className="fa-solid fa-list-check me-2"></i>
               <span className="link-text">Завдання</span>
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              className={clsx(
+                `nav-link d-flex align-items-center ${pathname === "/map" && "active"}`,
+              )}
+              href="/map"
+              data-page="sensors"
+            >
+              <i className="fa-solid fa-map me-2"></i>
+              <span className="link-text">Карта полів</span>
             </Link>
           </li>
           <li className="nav-item">

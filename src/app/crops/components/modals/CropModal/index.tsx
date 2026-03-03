@@ -82,12 +82,12 @@ const CropModal = ({
                   required
                 >
                   <option value="">Оберіть тип</option>
-                  <option value="Wheat">Пшениця</option>
-                  <option value="Rice">Рис</option>
-                  <option value="Corn">Кукурудза</option>
-                  <option value="Soybean">Соя</option>
-                  <option value="Vegetables">Овочі</option>
-                  <option value="Fruits">Фрукти</option>
+                  <option value="Пшениця">Пшениця</option>
+                  <option value="Рис">Рис</option>
+                  <option value="Кукурудза">Кукурудза</option>
+                  <option value="Соя">Соя</option>
+                  <option value="Овочі">Овочі</option>
+                  <option value="Фрукти">Фрукти</option>
                 </select>
                 <div className="invalid-feedback">
                   Оберіть, будь-ласка, тип культури.

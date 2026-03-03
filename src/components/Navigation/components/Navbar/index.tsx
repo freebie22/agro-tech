@@ -41,6 +41,10 @@ const Navbar = ({ mobileMenuBtnRef, navbarRef }: Props) => {
         name = "Завдання";
         break;
       }
+      case "/map": {
+        name = "Карта полів";
+        break;
+      }
       default:
         name = "Головна";
         break;

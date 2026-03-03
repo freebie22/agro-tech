@@ -33,6 +33,10 @@ const Navbar = ({ mobileMenuBtnRef, navbarRef }: Props) => {
         name = "Налаштування";
         break;
       }
+      case "/sensors": {
+        name = "Показники сенсорів";
+        break;
+      }
       default:
         name = "Головна";
         break;

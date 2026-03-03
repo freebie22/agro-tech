@@ -88,13 +88,13 @@ const Navbar = ({ mobileMenuBtnRef, navbarRef }: Props) => {
         <div className="d-flex align-items-center">
           <div className="dropdown me-2">
             <button
-              className="btn btn-light position-relative"
+              className="btn btn-light position-relative me-2"
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
               <i className="fas fa-bell"></i>
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              <span className="position-absolute top-0 mt-1 start-100 translate-middle badge rounded-pill bg-danger">
                 3<span className="visually-hidden">notifications</span>
               </span>
             </button>
@@ -103,21 +103,21 @@ const Navbar = ({ mobileMenuBtnRef, navbarRef }: Props) => {
               style={{ minWidth: "260px" }}
             >
               <li>
-                <h6 className="dropdown-header">Notifications</h6>
+                <h6 className="dropdown-header">Сповіщення</h6>
               </li>
               <li>
                 <a className="dropdown-item" href="#">
-                  Wheat harvest due in 2 days
+                  Пшеницю необхідно зібрати через 2 дні
                 </a>
               </li>
               <li>
                 <a className="dropdown-item" href="#">
-                  New farmer registration
+                  Авторизовано нового фермера
                 </a>
               </li>
               <li>
-                <a className="dropdown-item" href="#">
-                  Irrigation system alert
+                <a className="dropdown-item text-danger" href="#">
+                  Сповіщення системи поливу
                 </a>
               </li>
             </ul>

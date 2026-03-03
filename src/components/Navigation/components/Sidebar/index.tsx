@@ -104,8 +104,8 @@ const Sidebar = ({
               className={clsx(
                 `nav-link d-flex align-items-center ${pathname === "/tasks" && "active"}`,
               )}
-              href="/sensors"
-              data-page="sensors"
+              href="/tasks"
+              data-page="tasks"
             >
               <i className="fa-solid fa-list-check me-2"></i>
               <span className="link-text">Завдання</span>

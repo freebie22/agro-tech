@@ -3,9 +3,7 @@ export default function Farmers() {
     <div className="container-fluid p-4" id="pageContent">
       <div id="farmersPage" className="page-content">
         <h4>Управління фермерами</h4>
-        <p className="text-muted">
-          Функціонал управління фермерами та ключові показники
-        </p>
+        <p className="text-muted">Функціонал управління та ключові показники</p>
 
         <div className="card shadow-sm mb-4">
           <div className="card-body">
